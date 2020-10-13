@@ -6,15 +6,17 @@ const Header = () => {
   return (
     <React.Fragment>
       <HeaderContainer>
-        <Video
-          src="video-and-img/header-vedio.mp4"
-          autoPlay
-          loop
-          muted
-          type="video/mp4"
-        >
-          your prowser dose not support the video tag
-        </Video>
+        <VideoContainer className="">
+          <Video
+            src="video-and-img/header-vedio.mp4"
+            autoPlay
+            loop
+            muted
+            type="video/mp4"
+          >
+            your prowser dose not support the video tag
+          </Video>
+        </VideoContainer>
       </HeaderContainer>
       <HeaderTitle className="text-light row">
         <h1 className="col-12 text-capitalize bg">
@@ -36,14 +38,18 @@ export default Header;
 const HeaderContainer = styled.div`
   z-index: -2;
   position: relative;
-  height: 100vh;
-  width: 100vw;
+`;
+
+const VideoContainer = styled.div`
+  height: 70vh;
+  width: 100%;
   overflow: hidden;
+  background: #0a0a23;
 `;
 
 const Video = styled.video`
-  position: fixed;
-  width: auto;
+  position: fixed !important;
+  width: 100vw;
   height: auto;
   top: -200px;
 `;
